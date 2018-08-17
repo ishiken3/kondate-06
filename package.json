@@ -1,0 +1,14 @@
+{
+  "name": "kondate-06-new",
+  "version": "1.0.0",
+  "description": "kondate-06-02",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kenichi ishihara",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
