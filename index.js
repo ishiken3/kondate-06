@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // 定数の設定
 const LINE_CHANNEL_ACCESS_TOKEN = 'MJkFsPtOsd78RtnSaLotsmt+rrnQaFU18w5nOZbcGrGFlxNKym/hK+b8mwusULHLa8wa3jR5RPX7WzwqBtE805GFKebRwxMBjpgsH3zYm5/pBnA24Mgpe14ICsqv1o8EXXrs2Q7VeW1ZbhGZTx9BRAdB04t89/1O/w1cDnyilFU='; // 追加
-const APIAI_CLIENT_ACCESS_TOKEN = '96ddcbc8fe8147a893f579f47ea32d01';
+// const APIAI_CLIENT_ACCESS_TOKEN = '96ddcbc8fe8147a893f579f47ea32d01';
 
 // -----------------------------------------------------------------------------
 // モジュールのインポート
