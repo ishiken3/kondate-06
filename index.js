@@ -7,7 +7,8 @@ const LINE_CHANNEL_ACCESS_TOKEN = 'MJkFsPtOsd78RtnSaLotsmt+rrnQaFU18w5nOZbcGrGFl
 var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
-var mecab = require('mecabaas-client'); // 追加
+var mecab = require('mecabaas-client');
+var shokuhin = require('shokuhin-db');
 var app = express();
 
 // -----------------------------------------------------------------------------
@@ -27,15 +28,28 @@ app.post('/webhook', function(req, res, next){
     res.status(200).end();
     for (var event of req.body.events){
         if (event.type == 'message' && event.message.text){
-             // Mecabクラウドサービスでメッセージを解析
             mecab.parse(event.message.text)
             .then(
                 function(response){
-                      // 解析結果を出力
+                    var foodList = [];
+                    for (var elem of response){
+                        if (elem.length > 2 && elem[1] == '名詞'){
+                            foodList.push(elem);
+                        }
+                    }
+                    var gotAllNutrition = [];
+                    if (foodList.length > 0){
+                        for (var food of foodList){
+                            gotAllNutrition.push(shokuhin.getNutrition(food[0]));
+                        }
+                        return Promise.all(gotAllNutrition);
+                    }
+                }
+            ).then(
+                function(response){
                     console.log(response);
                 }
             );
-
         }
     }
 });
