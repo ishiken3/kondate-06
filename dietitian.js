@@ -17,7 +17,7 @@ module.exports = class dietitian {
             replyToken: replyToken,
             messages: [{
                 type: 'text',
-                text: 'カロリーは合計' + totalCalorie + 'kcalです！'
+                text: 'カロリーは合計' + totalCalorie + 'kcalです！'+'タンパク質は'+'です！' 
             }]
         }
         var url = 'https://api.line.me/v2/bot/message/reply';
