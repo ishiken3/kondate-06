@@ -8,9 +8,14 @@ module.exports = class dietitian {
         for (var food of foodList){
             totalCalorie += food.calorie;
         }
-        var totalProtein = 0; ///////////////自分で追記/////////////
+        var totalProtein = 0; ///////////////タンパク質自分で追記/////////////
         for (var food of foodList){
             totalProtein += food.protein;
+        }
+
+        var totalCarb = 0; ///////////////炭水化物自分で追記/////////////
+        for (var food of foodList){
+            totalProtein += food.carb;
         }
 
         var headers = {
@@ -21,7 +26,7 @@ module.exports = class dietitian {
             replyToken: replyToken,
             messages: [{
                 type: 'text',
-                text: 'カロリーは合計' + totalCalorie + 'kcalです！'+'タンパク質は'+ totalProtein+'です！' ///////////////kcal以降自分で追記/////////////
+                text: 'カロリーは' + totalCalorie + 'kcal、'+'タンパク質'+ totalProtein+'g、'+'炭水化物'+ totalCarb+'gです！' ///////////////kcal以降自分で追記/////////////
             }]
         }
         var url = 'https://api.line.me/v2/bot/message/reply';
