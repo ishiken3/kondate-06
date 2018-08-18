@@ -18,6 +18,11 @@ module.exports = class dietitian {
             totalCarb += food.carb;
         }
 
+        var totalFat = 0; ///////////////炭水化物自分で追記/////////////
+        for (var food of foodList){
+            totalFat += food.fat;
+        }
+
         var headers = {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
@@ -26,7 +31,7 @@ module.exports = class dietitian {
             replyToken: replyToken,
             messages: [{
                 type: 'text',
-                text: 'カロリーは' + totalCalorie + 'kcal、'+'タンパク質'+ totalProtein+'g、'+'炭水化物'+ totalCarb+'gです！' ///////////////kcal以降自分で追記/////////////
+                text: 'カロリーは' + totalCalorie + 'kcal、'+'タンパク質'+ totalProtein+'g、'+'炭水化物'+ totalCarb+'g、'+'脂質'+ totalFat+'gです！' ///////////////kcal以降自分で追記/////////////
             }]
         }
         var url = 'https://api.line.me/v2/bot/message/reply';
