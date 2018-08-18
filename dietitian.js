@@ -8,6 +8,10 @@ module.exports = class dietitian {
         for (var food of foodList){
             totalCalorie += food.calorie;
         }
+        var totalProtein = 0; ///////////////自分で追記/////////////
+        for (var food of foodList){
+            totalProtein += food.protein;
+        }
 
         var headers = {
             'Content-Type': 'application/json',
@@ -17,7 +21,7 @@ module.exports = class dietitian {
             replyToken: replyToken,
             messages: [{
                 type: 'text',
-                text: 'カロリーは合計' + totalCalorie + 'kcalです！'+'タンパク質は'+'です！' 
+                text: 'カロリーは合計' + totalCalorie + 'kcalです！'+'タンパク質は'+ totalProtein+'です！' ///////////////kcal以降自分で追記/////////////
             }]
         }
         var url = 'https://api.line.me/v2/bot/message/reply';
