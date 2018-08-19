@@ -18,7 +18,7 @@ module.exports = class dietitian {
             totalCarb += food.carb;
         }
 
-        var totalFat = 0; ///////////////炭水化物自分で追記/////////////
+        var totalFat = 0; ///////////////脂質自分で追記/////////////
         for (var food of foodList){
             totalFat += food.fat;
         }
