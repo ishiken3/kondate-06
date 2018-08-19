@@ -85,10 +85,8 @@ module.exports = class dietitian {
             json: true
         });
     }
-}
 
-
-static replyRecommendation(replyToken){
+    static replyRecommendation(replyToken){
     var headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
@@ -109,4 +107,11 @@ static replyRecommendation(replyToken){
         json: true
     });
 }
+
+
+    
+}
+
+
+
 
