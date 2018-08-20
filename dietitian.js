@@ -86,7 +86,7 @@ module.exports = class dietitian {
         });
     }
 
-    static replyRecommendation(replyToken){
+    static replyRecommendation(eplyToken, foodList){
     var headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
